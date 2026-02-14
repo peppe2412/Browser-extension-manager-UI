@@ -1,3 +1,9 @@
+/* Colors root */
+:root{
+  --color-main-dark-mode: rgb(232, 232, 232);
+  --bg-main-dark-mode: hsl(228, 45%, 44%);
+}
+
 /* Regular font */
 @font-face {
   font-family: "Regular-font";
@@ -8,6 +14,15 @@
 @font-face {
   font-family: "Bold-font";
   src: url("assets/fonts/static/NotoSans-Bold.ttf") format("woff2");
+}
+
+/* Fonts class */
+.regular-font{
+  font-family: "Regular-font";
+}
+
+.bold-font{
+  font-family: "Bold-font";
 }
 
 header {
@@ -21,7 +36,7 @@ header {
   padding: 12px;
   width: 80%;
   border-radius: 20px;
-  background-color: hsl(228, 45%, 44%);
+  background-color: var(--bg-main-dark-mode);
 }
 
 .logo-box {
@@ -41,8 +56,7 @@ header {
 
 .header-title {
   margin: 0;
-  font-family: "Bold-font";
-  color: rgb(232, 232, 232);
+  color: var(--color-main-dark-mode);
 }
 
 .dark-light-mode-box {
@@ -64,4 +78,11 @@ header {
   display: flex;
   align-items: center;
   width: 20px;
+}
+
+.extensions-list-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
