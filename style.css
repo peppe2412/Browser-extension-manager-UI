@@ -89,7 +89,6 @@ header {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
-  margin-bottom: 1rem;
 }
 
 .extensions-list-title-box {
@@ -119,5 +118,37 @@ header {
   border: none;
   background-color: hsl(228, 27%, 46%);
   color: var(--color-main-dark-mode);
+  cursor: pointer;
+}
+
+#data-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.content-data-box {
+  display: flex;
+  gap: 10px;
+  background-color: var(--bg-main-dark-mode);
+  color: var(--color-main-dark-mode);
+  padding: 15px;
+  border-radius: 17px;
+}
+
+.logo-data-content-box {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.container-checkbox {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+.container-checkbox input{
   cursor: pointer;
 }
