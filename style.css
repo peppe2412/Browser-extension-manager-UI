@@ -1,5 +1,5 @@
 /* Colors root */
-:root{
+:root {
   --color-main-dark-mode: rgb(232, 232, 232);
   --bg-main-dark-mode: hsl(228, 45%, 44%);
 }
@@ -17,11 +17,11 @@
 }
 
 /* Fonts class */
-.regular-font{
+.regular-font {
   font-family: "Regular-font";
 }
 
-.bold-font{
+.bold-font {
   font-family: "Bold-font";
 }
 
@@ -80,9 +80,44 @@ header {
   width: 20px;
 }
 
-.extensions-list-container{
+.extensions-list-container {
+  display: flex;
+  width: 82%;
+}
+
+.extensions-list-section {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
   margin-bottom: 1rem;
+}
+
+.extensions-list-title-box {
+  display: flex;
+  width: 100%;
+}
+
+.extensions-list-title {
+  color: var(--color-main-dark-mode);
+}
+
+.buttons-extensions-list-box {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  gap: 10px;
+}
+
+.buttons-extensions-list-box button {
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 15px;
+  font-family: "Regular-font";
+  border: none;
+  background-color: hsl(228, 27%, 46%);
+  color: var(--color-main-dark-mode);
+  cursor: pointer;
 }
