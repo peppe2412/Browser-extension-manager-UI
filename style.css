@@ -1,0 +1,67 @@
+/* Regular font */
+@font-face {
+  font-family: "Regular-font";
+  src: url("assets/fonts/static/NotoSans-Regular.ttf") format("woff2");
+}
+
+/* Bold Font */
+@font-face {
+  font-family: "Bold-font";
+  src: url("assets/fonts/static/NotoSans-Bold.ttf") format("woff2");
+}
+
+header {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  padding: 12px;
+  width: 80%;
+  border-radius: 20px;
+  background-color: hsl(228, 45%, 44%);
+}
+
+.logo-box {
+  display: flex;
+  gap: 12px;
+}
+
+.logo-header {
+  margin-left: 0.3rem;
+  width: 38px;
+}
+
+.header-title-box {
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  margin: 0;
+  font-family: "Bold-font";
+  color: rgb(232, 232, 232);
+}
+
+.dark-light-mode-box {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-right: 0.3rem;
+}
+
+.button-dark-light-mode {
+  background-color: hsl(228, 27%, 46%);
+  border: none;
+  padding: 10px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.logo-dark-light {
+  display: flex;
+  align-items: center;
+  width: 20px;
+}
