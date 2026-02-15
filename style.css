@@ -2,6 +2,11 @@
 :root {
   --color-main-dark-mode: rgb(232, 232, 232);
   --bg-main-dark-mode: hsl(228, 45%, 44%);
+  --background-dark-mode: linear-gradient(to bottom, hsl(223, 93%, 11%), hsl(228, 95%, 16%));
+}
+
+body{
+  background: var(--background-dark-mode);
 }
 
 /* Regular font */
