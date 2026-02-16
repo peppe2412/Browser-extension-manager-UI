@@ -38,12 +38,18 @@
           </div>
         </div>
         <div class="dark-light-mode-box">
-          <button class="button-dark-light-mode focus">
-            <img
-              class="logo-dark-light"
-              src="assets/images/icon-sun.svg"
-              alt="Sun"
-            />
+          <button id="button-theme" class="button-dark-light-mode focus">
+            <object
+              id="sun-icon"
+              class="display-none"
+              data="assets/images/icon-sun.svg"
+              type="image/svg+xml"
+            ></object>
+            <object
+              id="moon-icon"
+              data="assets/images/icon-moon.svg"
+              type="image/svg+xml"
+            ></object>
           </button>
         </div>
       </div>
@@ -72,6 +78,7 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>  -->
 
+    <script src="theme.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
