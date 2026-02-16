@@ -1,12 +1,19 @@
 /* Colors root */
 :root {
-  --color-main-dark-mode: rgb(232, 232, 232);
-  --bg-main-dark-mode: hsl(228, 45%, 44%);
-  --background-dark-mode: linear-gradient(to bottom, hsl(223, 93%, 11%), hsl(228, 95%, 16%));
+  --color-main: rgb(232, 232, 232);
+  --bg-main: hsl(229, 58%, 26%);
+  --background: linear-gradient(
+    to bottom,
+    hsl(223, 93%, 11%),
+    hsl(228, 95%, 16%)
+  );
+  --buttons-colors: hsl(229, 52%, 38%);
+  --focus-active-color: rgb(229, 90, 30);
+  --hover-color: hsl(228, 27%, 46%);
 }
 
-body{
-  background: var(--background-dark-mode);
+body {
+  background: var(--background);
 }
 
 /* Regular font */
@@ -30,6 +37,10 @@ body{
   font-family: "Bold-font";
 }
 
+.focus:focus {
+  border: 3px solid var(--focus-active-color);
+}
+
 header {
   margin-top: 30px;
   display: flex;
@@ -41,7 +52,7 @@ header {
   padding: 12px;
   width: 80%;
   border-radius: 20px;
-  background-color: var(--bg-main-dark-mode);
+  background-color: var(--bg-main);
 }
 
 .logo-box {
@@ -61,7 +72,7 @@ header {
 
 .header-title {
   margin: 0;
-  color: var(--color-main-dark-mode);
+  color: var(--color-main);
 }
 
 .dark-light-mode-box {
@@ -72,11 +83,15 @@ header {
 }
 
 .button-dark-light-mode {
-  background-color: hsl(228, 27%, 46%);
+  background-color: var(--buttons-colors);
   border: none;
   padding: 10px;
   border-radius: 9px;
   cursor: pointer;
+}
+
+.button-dark-light-mode:hover {
+  background-color: var(--hover-color);
 }
 
 .logo-dark-light {
@@ -102,7 +117,7 @@ header {
 }
 
 .extensions-list-title {
-  color: var(--color-main-dark-mode);
+  color: var(--color-main);
 }
 
 .buttons-extensions-list-box {
@@ -121,23 +136,30 @@ header {
   border-radius: 15px;
   font-family: "Regular-font";
   border: none;
-  background-color: hsl(228, 27%, 46%);
-  color: var(--color-main-dark-mode);
+  background-color: var(--buttons-colors);
+  color: var(--color-main);
   cursor: pointer;
 }
 
+.buttons-extensions-list-box button:hover {
+  background-color: var(--hover-color);
+}
+
 #data-content {
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-bottom: 3.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 8px;
+  gap: 12px;
 }
 
 .content-data-box {
   display: flex;
   gap: 10px;
-  background-color: var(--bg-main-dark-mode);
-  color: var(--color-main-dark-mode);
+  background-color: var(--bg-main);
+  color: var(--color-main);
   padding: 15px;
   border-radius: 17px;
 }
@@ -154,6 +176,6 @@ header {
   justify-content: end;
 }
 
-.container-checkbox input{
+.container-checkbox input {
   cursor: pointer;
 }
