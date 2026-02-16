@@ -19,6 +19,10 @@ function appendData(data) {
 
 function divElementDataContent(dataContent) {
   let div = document.createElement("div");
+
+  const getContent = JSON.parse(localStorage.getItem("save-check") || "{}");
+  const isActive = getContent[dataContent.name] ?? dataContent.isActive;
+
   div.classList.add("content-data-box");
   div.innerHTML = `
       <div class="logo-data-content-box">
@@ -28,10 +32,23 @@ function divElementDataContent(dataContent) {
         <h4 style="margin: 0; margin-bottom: 5px;" class="bold-font">${dataContent.name}</h4>
         <small style="margin: 0;" class="regular-font">${dataContent.description}</small>
         <div class="container-checkbox">
-          <input ${dataContent.isActive ? "checked" : ""} type="checkbox" 
-          title="${dataContent.isActive ? "Disattiva" : "Attiva"}">
+          <input ${isActive ? "checked" : ""} type="checkbox" 
+          title="${isActive ? "Attiva" : "Disattiva"}">
         </div>
       </div>
     `;
   content.appendChild(div);
+
+  const checkboxInput = div.querySelector('input[type= "checkbox"]');
+  checkboxInput.addEventListener("change", (e) => {
+    const isChecked = e.target.checked;
+    saveStatue(dataContent.name, isChecked);
+    e.target.title = isChecked ? "Disattiva" : "Attiva";
+  });
+}
+
+function saveStatue(name, isCheck) {
+  const save = JSON.parse(localStorage.getItem("save-check") || "{}");
+  save[name] = isCheck;
+  localStorage.setItem("save-check", JSON.stringify(save));
 }
