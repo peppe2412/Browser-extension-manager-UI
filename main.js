@@ -1,4 +1,7 @@
 const content = document.querySelector("#data-content");
+const buttonAll = document.querySelector("#button-all");
+const buttonActive = document.querySelector("#button-active");
+const buttonInactive = document.querySelector("#button-inactive");
 
 fetch("data.json")
   .then((res) => {
@@ -32,7 +35,7 @@ function divElementDataContent(dataContent) {
         <h4 style="margin: 0; margin-bottom: 5px;" class="bold-font">${dataContent.name}</h4>
         <small style="margin: 0;" class="regular-font">${dataContent.description}</small>
         <div class="container-checkbox">
-          <input ${isActive ? "checked" : ""} type="checkbox" 
+          <input name="input-checked" ${isActive ? "checked" : ""} type="checkbox" 
           title="${isActive ? "Attiva" : "Disattiva"}">
         </div>
       </div>
@@ -45,6 +48,46 @@ function divElementDataContent(dataContent) {
     saveStatue(dataContent.name, isChecked);
     e.target.title = isChecked ? "Disattiva" : "Attiva";
   });
+
+  buttonActive.addEventListener("click", () => {
+    const inputsChecked = document.querySelectorAll(
+      'input[name="input-checked"]',
+    );
+
+    inputsChecked.forEach((input) => {
+      const dataContentBox = input.closest(".content-data-box");
+
+      if (dataContentBox) {
+        dataContentBox.style.display = input.checked ? "flex" : "none";
+      }
+    });
+  });
+
+  buttonInactive.addEventListener("click", () => {
+    const inputsChecked = document.querySelectorAll(
+      'input[name="input-checked"]',
+    );
+    inputsChecked.forEach((input) => {
+      const dataContentBox = input.closest(".content-data-box");
+
+      if (dataContentBox) {
+        dataContentBox.style.display = !input.checked ? "flex" : "none";
+      }
+    });
+  });
+
+  buttonAll.addEventListener("click", ()=>{
+    const inputsChecked = document.querySelectorAll(
+      'input[name="input-checked"]',
+    );
+    inputsChecked.forEach((input) => {
+      const dataContentBox = input.closest(".content-data-box");
+
+      if (dataContentBox) {
+        dataContentBox.style.display ="flex";
+      }
+    });
+  })
 }
 
 function saveStatue(name, isCheck) {
