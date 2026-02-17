@@ -56,3 +56,6 @@ Works on all modern browsers that support:
 - ES6 JavaScript (arrow functions, template literals)
 - Fetch API
 - localStorage
+
+
+# [Project online](https://peppe2412.github.io/Browser-extension-manager-UI/)
