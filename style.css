@@ -1,4 +1,4 @@
-:root{
+:root {
   --color-focus: rgb(248, 105, 44);
 }
 
@@ -12,12 +12,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-scrollbar); 
+  background: var(--color-scrollbar);
   border-radius: 10px;
 }
 
@@ -176,10 +175,15 @@ header {
   align-items: center;
 }
 
+.title-data-content {
+  margin: 0 0 5px;
+}
+
 .container-checkbox {
   margin-top: 30px;
   display: flex;
   justify-content: end;
+  gap: 10px;
 }
 
 .container-checkbox input {

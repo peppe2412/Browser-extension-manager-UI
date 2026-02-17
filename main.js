@@ -32,11 +32,10 @@ function divElementDataContent(dataContent) {
         <img src="${dataContent.logo}" alt="${dataContent.name} Logo">
       </div>
       <div>
-        <h4 style="margin: 0; margin-bottom: 5px;" class="bold-font">${dataContent.name}</h4>
+        <h2 class="bold-font title-data-content">${dataContent.name}</h2>
         <small style="margin: 0;" class="regular-font">${dataContent.description}</small>
         <div class="container-checkbox">
-          <input name="input-checked" ${isActive ? "checked" : ""} type="checkbox" 
-          title="${isActive ? "Attiva" : "Disattiva"}">
+          <input aria-label="Select to change" name="input-checked" ${isActive ? "checked" : ""} type="checkbox" title="${isActive ? "Attiva" : "Disattiva"}">
         </div>
       </div>
     `;
@@ -76,7 +75,7 @@ function divElementDataContent(dataContent) {
     });
   });
 
-  buttonAll.addEventListener("click", ()=>{
+  buttonAll.addEventListener("click", () => {
     const inputsChecked = document.querySelectorAll(
       'input[name="input-checked"]',
     );
@@ -84,10 +83,10 @@ function divElementDataContent(dataContent) {
       const dataContentBox = input.closest(".content-data-box");
 
       if (dataContentBox) {
-        dataContentBox.style.display ="flex";
+        dataContentBox.style.display = "flex";
       }
     });
-  })
+  });
 }
 
 function saveStatue(name, isCheck) {
