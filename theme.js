@@ -46,6 +46,7 @@ function setPropertyLightTheme() {
     "--hover-color",
     "hsla(230, 12%, 62%, 0.11)",
   );
+  document.documentElement.style.setProperty("--color-scrollbar", "rgb(248, 105, 44)")
 }
 
 function setPropertyDarkTheme() {
@@ -71,6 +72,7 @@ function setPropertyDarkTheme() {
     "--hover-color",
     "hsl(228, 27%, 46%)",
   );
+  document.documentElement.style.setProperty("--color-scrollbar", "rgb(119, 151, 232)")
 }
 
 function viewMoon() {

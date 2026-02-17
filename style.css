@@ -1,9 +1,24 @@
 :root{
-  --focus-active-color: rgb(248, 105, 44);
+  --color-focus: rgb(248, 105, 44);
 }
 
 body {
   background: var(--background);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar); 
+  border-radius: 10px;
 }
 
 /* Regular font */
@@ -28,7 +43,7 @@ body {
 }
 
 .focus:focus {
-  border: 3px solid var(--focus-active-color);
+  border: 3px solid var(--color-focus);
 }
 
 .display-none {
