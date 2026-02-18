@@ -49,43 +49,41 @@ function divElementDataContent(dataContent) {
   });
 
   buttonActive.addEventListener("click", () => {
-    const inputsChecked = document.querySelectorAll(
-      'input[name="input-checked"]',
-    );
-
-    inputsChecked.forEach((input) => {
-      const dataContentBox = input.closest(".content-data-box");
-
-      if (dataContentBox) {
-        dataContentBox.style.display = input.checked ? "flex" : "none";
-      }
-    });
+    getDataContents("active");
   });
 
   buttonInactive.addEventListener("click", () => {
-    const inputsChecked = document.querySelectorAll(
-      'input[name="input-checked"]',
-    );
-    inputsChecked.forEach((input) => {
-      const dataContentBox = input.closest(".content-data-box");
-
-      if (dataContentBox) {
-        dataContentBox.style.display = !input.checked ? "flex" : "none";
-      }
-    });
+    getDataContents("inactive");
   });
 
   buttonAll.addEventListener("click", () => {
-    const inputsChecked = document.querySelectorAll(
-      'input[name="input-checked"]',
-    );
-    inputsChecked.forEach((input) => {
-      const dataContentBox = input.closest(".content-data-box");
+    getDataContents("all");
+  });
+}
 
-      if (dataContentBox) {
+function getDataContents(filterType) {
+  const inputsChecked = document.querySelectorAll(
+    'input[name="input-checked"]',
+  );
+
+  inputsChecked.forEach((input) => {
+    const dataContentBox = input.closest(".content-data-box");
+
+    switch (filterType) {
+      case "active":
+        dataContentBox.style.display = input.checked ? "flex" : "none";
+        break;
+      case "inactive":
+        dataContentBox.style.display = !input.checked ? "flex" : "none";
+        break;
+      case "all":
         dataContentBox.style.display = "flex";
-      }
-    });
+        break;
+      default:
+        dataContentBox.style.display = "flex";
+        console.error("Si è verificato un errore!");
+        break;
+    }
   });
 }
 
